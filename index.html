@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irene Joyce Sevillejo · portfolio</title>
+    <!-- Poppins + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #98ffb0;        /* mint green background */
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    width: 100%;
+    background: #f0fff4;          /* light mint container */
+    border-radius: 40px;
+    box-shadow: 0 25px 45px -14px rgba(50, 150, 50, 0.15), 0 0 0 1px #98ffb0;
+    padding: 2.2rem 2.5rem;
+    border: 1px solid #98ffb0;
+}
+
+/* ------- CLICKABLE MENU - HOME, ACHIEVEMENT, EXPERTISE, CONTACT ------- */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.8rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1.1rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #98ffb0;   /* mint green border */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #1a4b2e;               /* dark mint text */
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    transition: 0.2s;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.nav-link i {
+    color: #2d6a4a;                /* mint icon */
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background: #d0f0d0;            /* light mint hover */
+    border-color: #2d6a4a;
+    color: #0b3b1e;
+}
+.nav-link:hover i {
+    color: #0b3b1e;
+}
+
+/* active style – solid mint / white text */
+.nav-active {
+    background: #2d6a4a !important;
+    color: #ffffff !important;
+    border-color: #98ffb0 !important;
+}
+.nav-active i {
+    color: #ffffff !important;
+}
+
+/* personal header */
+.personal-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: #e0ffe6;           /* soft mint */
+    padding: 1.2rem 1.8rem;
+    border-radius: 28px;
+    border: 1px solid #98ffb0;
+}
+
+/* ===== 2x2 picture style ===== */
+.profile-pic-2x2 {
+    width: 120px;                  /* square – perfect 2x2 proportion */
+    height: 120px;                 /* 1:1 aspect ratio */
+    border-radius: 24px;            /* slightly rounded, keeps modern square feel */
+    overflow: hidden;
+    background: #d0f0d0;
+    border: 3px solid #2d6a4a;      /* dark mint border */
+    box-shadow: 0 8px 16px rgba(0,80,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic-2x2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* ensures image fills the square without distortion */
+    display: block;
+}
+
+.name-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f3b1f;                 /* dark forest green */
+    line-height: 1.1;
+}
+
+.badge-course {
+    background: #d0f0d0;             /* light mint */
+    color: #0f3b1f;                  /* dark mint text */
+    font-weight: 600;
+    padding: 0.3rem 1.2rem;
+    border-radius: 40px;
+    display: inline-block;
+    font-size: 0.95rem;
+    border-left: 6px solid #2d6a4a;   /* dark mint accent */
+}
+
+.year-chip {
+    background: #d0f0d0;              /* mint chip */
+    color: #0f3b1f;
+    border-radius: 30px;
+    padding: 0.3rem 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* content sections */
+.content-section {
+    display: block;
+    margin-top: 1.2rem;
+    scroll-margin-top: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 650;
+    font-size: 1.5rem;
+    color: #0f3b1f;                 /* dark mint heading */
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid #98ffb0; /* mint border */
+    padding-bottom: 0.5rem;
+}
+
+.section-title i {
+    color: #2d6a4a;                  /* mint green */
+    font-size: 1.8rem;
+}
+
+/* objective / expertise cards */
+.objective-card, .expertise-card {
+    background: #e0ffe6;              /* very light mint */
+    padding: 1.5rem 2rem;
+    border-radius: 26px;
+    border-left: 10px solid #2d6a4a;   /* solid dark mint */
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #0f3b1f;
+    margin-bottom: 1.8rem;
+}
+
+.expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.expertise-pill {
+    background: #d0f0d0;
+    border-radius: 60px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 10px rgba(0,80,0,0.1);
+    border: 1px solid #2d6a4a;
+    color: #0f3b1f;
+    font-size: 1.05rem;
+}
+
+.expertise-pill i {
+    color: #2d6a4a;                   /* mint icon */
+    font-size: 1.3rem;
+}
+
+/* achievement list */
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    background: #e0ffe6;
+    padding: 0.9rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #2d6a4a;         /* mint border */
+    color: #0f3b1f;
+}
+.achievement-item i {
+    color: #2d6a4a;
+    font-size: 1.2rem;
+    width: 28px;
+    text-align: center;
+}
+
+/* skills badges */
+.skills-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 1rem;
+}
+
+.skill-badge {
+    background: #d0f0d0;
+    border-radius: 50px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #2d6a4a;
+    color: #0f3b1f;
+}
+
+/* project grid (if needed) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-item {
+    background: #e0ffe6;
+    border-radius: 24px;
+    padding: 1.3rem 1.3rem;
+    border: 1px solid #98ffb0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.15s;
+    box-shadow: 0 8px 18px -8px rgba(0,80,0,0.2);
+}
+
+.project-item:hover {
+    border-color: #2d6a4a;
+    background: #d0f0d0;
+}
+
+.project-icon {
+    background: #d0f0d0;
+    color: #0f3b1f;
+    border-radius: 18px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ========== CONTACT – mint green theme ========= */
+.contact-card {
+    background: #e0ffe6;              /* light mint background */
+    border-radius: 30px;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #98ffb0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #d0f0d0;
+    padding: 0.7rem 1.8rem;
+    border-radius: 60px;
+    text-decoration: none;
+    color: #0f3b1f;                   /* dark mint text */
+    font-weight: 500;
+    border: 1px solid #2d6a4a;
+    transition: 0.2s;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 8px rgba(0,80,0,0.1);
+    width: fit-content;
+    min-width: 260px;
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    color: #2d6a4a;                   /* mint icons */
+    width: 24px;
+    text-align: center;
+}
+
+.contact-item:hover {
+    background: #2d6a4a;               /* dark mint hover */
+    color: #ffffff;
+    border-color: #98ffb0;
+    transform: translateY(-2px);
+}
+.contact-item:hover i {
+    color: #ffffff;
+}
+
+.contact-intro {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f3b1f;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    border: none;
+    border-top: 2px dashed #98ffb0;
+    margin: 2rem 0 0.5rem;
+}
+
+.footer-note {
+    display: flex;
+    justify-content: flex-end;
+    color: #2d6a4a;
+    font-size: 0.85rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <!-- █████  BLACK & WHITE CLICKABLE MENU  █████ -->
+        <div class="nav-menu">
+            <a href="#home-section" class="nav-link nav-active" id="home-link"><i class="fas fa-home"></i> Home</a>
+            <a href="#achievement-section" class="nav-link" id="achievement-link"><i class="fas fa-trophy"></i> Achievement</a>
+            <a href="#expertise-section" class="nav-link" id="expertise-link"><i class="fas fa-brain"></i> Expertise</a>
+            <a href="#contact-section" class="nav-link" id="contact-link"><i class="fas fa-address-book"></i> Contact</a>
+        </div>
+
+        <!-- 👤 PERSONAL HEADER with 2x2 picture (name, course, year) -->
+        <div class="personal-header">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+                <!-- 2x2 picture block -->
+                <div class="profile-pic-2x2">
+                    <img src="irene.png" alt="Irene Joyce Sevillejo profile" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-user\' style=\'font-size:3.5rem;color:#aaa;\'></i>';">
+                </div>
+                <div class="name-title">
+                    <h1>Irene Joyce Sevillejo</h1>
+                    <span class="badge-course"><i class="fas fa-laptop-code"></i> Bachelor of Science in Information Technology</span>
+                </div>
+            </div>
+            <div class="year-chip">
+                <i class="fas fa-calendar-check"></i> 3rd Year · 2025-2026
+            </div>
+        </div>
+
+        <!-- ==========  H O M E  section (includes objective) ========== -->
+        <div class="content-section" id="home-section">
+            <div class="section-title">
+                <i class="fas fa-house-user"></i>
+                <span>Home / profile</span>
+            </div>
+            <div class="objective-card">
+                <i class="fas fa-bullseye" style="font-size: 1.8rem; margin-right: 0.8rem; color: #cccccc;"></i>
+                <strong style="font-size:1.2rem;">🎯 Career objective</strong><br>
+                IT Specialist and Digital Creator with expertise in photo/video editing, web development, and technical documentation. Passionate about creating digital content, developing functional applications, and managing multiple projects effectively.
+            </div>
+        </div> <!-- end home -->
+
+        <!-- ==========  A C H I E V E M E N T  section ========== -->
+        <div class="content-section" id="achievement-section" style="margin-top: 1.8rem;">
+            <div class="section-title">
+                <i class="fas fa-medal"></i>
+                <span>Achievements & honors</span>
+            </div>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <i class="fas fa-award"></i>
+                    <span><strong>Edited Videos & Images for Academic Use</strong> – Created and edited numerous videos and images used for school presentations, online learning content, and academic projects, enhancing educational materials with professional multimedia elements.</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-robot"></i>
+                    <span><strong>Created Posters & Social Media Materials</strong> – Designed and produced various posters, thumbnails, and social media graphics for school events, online content, and promotional materials with attention to visual appeal.</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span><strong>Built Functional Websites & Applications</strong> – Developed and deployed functional websites and mobile applications for academic projects and personal initiatives, demonstrating practical programming and development skills.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========  E X P E R T I S E  section (skills) ========== -->
+        <div class="content-section" id="expertise-section">
+            <div class="section-title">
+                <i class="fas fa-cogs"></i>
+                <span>🛠 Skills & expertise</span>
+            </div>
+            <div class="expertise-card">
+                <i class="fas fa-star" style="color: #cccccc; font-size: 1.6rem; float: right;"></i>
+                <p style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">⚡ specializations</p>
+                <div class="expertise-grid">
+                    <span class="expertise-pill"><i class="fab fa-html5"></i> semantic HTML5</span>
+                    <span class="expertise-pill"><i class="fab fa-css3-alt"></i> Flex/Grid · animations</span>
+                    <span class="expertise-pill"><i class="fas fa-mobile-screen-button"></i> mobile-first</span>
+                    <span class="expertise-pill"><i class="fas fa-universal-access"></i> WCAG 2.1</span>
+                    <span class="expertise-pill"><i class="fas fa-paint-roller"></i> design systems</span>
+                    <span class="expertise-pill"><i class="fas fa-code"></i> Git workflow</span>
+                </div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <span style="font-weight: 600; color: #ffffff;"><i class="fas fa-toolbox"></i> Core toolkit:</span>
+                <div class="skills-badge-container">
+                    <span class="skill-badge"><i class="fab fa-figma"></i> Figma</span>
+                    <span class="skill-badge"><i class="fas fa-database"></i> SQLite</span>
+                    <span class="skill-badge"><i class="fab fa-js"></i> ES6+</span>
+                    <span class="skill-badge"><i class="fas fa-code-branch"></i> GitHub</span>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <!-- ==========  C O N T A C T  section ========= -->
+        <div class="content-section" id="contact-section">
+            <div class="section-title">
+                <i class="fas fa-address-card"></i>
+                <span>📞 Contact</span>
+            </div>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <div class="contact-intro">
+                        <i class="fas fa-comment-dots"></i> reach out
+                        <span style="font-size: 0.95rem; font-weight: 400; color: #bbbbbb;"></span>
+                    </div>
+                    <!-- EMAIL (updated to Joseph's name) -->
+                    <a href="mailto:sevillejoairene@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i> sevillejoairene@gmail.com
+                    </a>
+                    <!-- CONTACT NUMBER (PHONE) -->
+                    <a href="tel:+639649556011" class="contact-item">
+                        <i class="fas fa-phone-alt"></i> +63 964 955 6011
+                    </a>
+                    <!-- LOCATION -->
+                    <span class="contact-item" style="cursor: default;">
+                        <i class="fas fa-map-marker-alt"></i> Madridejos, Philippines
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        
+    </div>
+
+    <!-- JavaScript for active states (unchanged) -->
+    <script>
+        (function() {
+            "use strict";
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+            
+            function removeActiveClasses() {
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active');
+                });
+            }
+
+            function setActiveLink(sectionId) {
+                removeActiveClasses();
+                const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                if (correspondingLink) {
+                    correspondingLink.classList.add('nav-active');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    removeActiveClasses();
+                    this.classList.add('nav-active');
+                });
+            });
+
+            function updateActiveSectionOnScroll() {
+                let currentSectionId = '';
+                const scrollPosition = window.scrollY + 150;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                if (currentSectionId) {
+                    setActiveLink(currentSectionId);
+                } else {
+                    const homeSection = document.getElementById('home-section');
+                    if (homeSection && window.scrollY < homeSection.offsetTop + 100) {
+                        setActiveLink('home-section');
+                    }
+                }
+            }
+
+            let isScrolling;
+            window.addEventListener('scroll', function() {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateActiveSectionOnScroll);
+            });
+
+            window.addEventListener('load', function() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    setActiveLink(hash);
+                } else {
+                    setActiveLink('home-section');
+                }
+                updateActiveSectionOnScroll();
+            });
+
+            window.addEventListener('hashchange', function() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    setActiveLink(hash);
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
